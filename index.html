@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Movie Slider</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- font awesome cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- swiper slider cdn css  -->
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+/>
+</head>
+<body>
+    <div class="container">
+        <div class="overlay"></div>
+        <div class="header">
+            <div class="logo">
+                <a href="#">MovieFlex</a>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <i class="fa fa-bars"></i>
+        </div>
+        <div class="wrapper">
+            <div class="movies">
+                <div class="movies-info">
+                    <div class="heading">Blackpanther</div>
+                    <div class="movie-type">2012 || action || Thriller</div>
+                    <button><i class="fa-solid fa-play"></i>Watch Now</button>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="imagess/blackpanther/bg.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="imagess/dr.strange/bg.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="imagess/flash/bg.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="imagess/hulk/bg.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="imagess/ironman/bg.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="imagess/spiderman/bg.jpg" alt="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="imagess/wanda/bg.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        // Menu 
+
+        let menu = document.querySelector("ul");
+
+        let bars = document.querySelector(".header .fa-bars");
+
+        bars.addEventListener("click",function(){
+            menu.classList.toggle("show");
+        })
+
+        let heading = document.querySelector(".heading")
+        let type = document.querySelector(".movie-type")
+        var swiper = new Swiper(".swiper",{
+            slidesPerView:1,
+            spaceBetween:30,
+            autoplay:{
+                delay:1500
+            },
+            on:{
+                slideChange:function(){
+                    const index = (this.realIndex + 1)
+                    if(index==1){
+                        document.body.style.background = "url('imagess/blackpanther/bg.jpg')";
+                        heading.innerText = "blackpanther";
+                        type.innerText = "2012 || action || Thriller";
+                    }
+                    if(index==2){
+                        document.body.style.background="url('imagess/dr.strange/bg.jpg')";
+                        heading.innerText = "Dr.Strange";
+                        type.innerText = "2016 || action || Thriller";
+                    }
+                    if(index==3){
+                        document.body.style.background = "url('imagess/flash/bg.jpg')";
+                        heading.innerText = "Flash";
+                        type.innerText = "2023 || action || Thriller";
+                    }
+                    if(index==4){
+                        document.body.style.background="url('imagess/hulk/bg.jpg')";
+                        heading.innerText = "Hulk";
+                        type.innerText = "2007 || action || Thriller";
+                    }
+                    if(index==5){
+                        document.body.style.background="url('imagess/ironman/bg.jpg')";
+                        heading.innerText = "Ironman";
+                        type.innerText = "2019 || action || Thriller || Sci-fi";
+                    }
+                    if(index==6){
+                        document.body.style.background="url('imagess/spiderman/bg.jpg')";
+                        heading.innerText = "Spiderman";
+                        type.innerText = "2023 || action || Thriller || Comedy || sci-fi";
+                    }
+                    if(index==7){
+                        document.body.style.background="url('imagess/wanda/bg.jpg')";
+                        heading.innerText = "Wanda";
+                        type.innerText = "2022 || action || sci-fi";
+                    }
+                }
+            },
+            mousewheeel:true,
+            breakpoints:{
+                1024:{
+                    slidesPerView:3,
+                    spaceBetween:40
+                },
+                900:{
+                    slidesPerView:2,
+                    spaceBetween:40
+                },
+                768:{
+                    slidesPerView:1,
+                    spaceBetween:40
+                },
+                500:{
+                    slidesPerView:1,
+                    spaceBetween:40
+                }
+            }
+        })
+
+    </script>
+</body>
+</html>

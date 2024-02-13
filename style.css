@@ -1,0 +1,241 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'poppins';
+}
+
+.header{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8%;
+    align-items: center;
+    background: linear-gradient(360deg,rgba(0,0,0,0) 20%,rgba(0,0,0,0.7) 85%);
+}
+.logo a{
+    color: #fff;
+    font-size: 2.3rem;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+ul li{
+    display: inline-block;
+    margin: 0 12px;
+}
+
+ul li a{
+    color: #fff;
+}
+
+.header .fa-bars{
+    font-size: 1.3rem;
+    background-color: #fff;
+    padding: 12px;
+    border-radius: 3px;
+    display: none;
+}
+body{
+    height: 100vh;
+    width: 100%;
+    background: url("imagess/blackpanther/bg.jpg");
+    background-size: cover !important;
+    background-position: top !important;
+    position: relative !important;  
+    background-repeat: no-repeat !important;
+    overflow: hidden;
+}
+.overlay{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+.wrapper{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    padding: 0 100px;
+    position: relative;
+}
+
+.wrapper:after{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(-190deg,rgba(0,0,0,0) 20% , rgba(0,0,0,1) 75%);
+    z-index: -1;
+}
+
+.movies{
+    height: 100%;
+    width: 50%;
+}
+.swiper{
+    width: 100%;
+}
+img{
+    position: absolute;
+    width: 100% !important;
+    height: 180px !important;
+    left: 0;
+    bottom: 15%;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.heading{
+    position: absolute;
+    top: 26%;
+    right: 14%;
+    color: #fff;
+    z-index: 11;
+    font-size: 3.8rem;
+    font-weight: 800;
+
+}
+
+.movie-type{
+    position: absolute;
+    right: 15%;
+    top: 37%;
+    z-index: 11;
+    color: #fff;
+    letter-spacing: 1.2px;
+}
+
+
+button{
+    position: absolute;
+    right: 15%;
+    top: 42%;
+    z-index: 11;
+    padding: 8px 18px;
+    height: 38px;
+    background-color: red;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    border: none;
+    outline: none;
+    letter-spacing: 1px;
+    border-radius: 3px;
+}
+
+.fa-play{
+    margin-right: 8px;
+}
+
+.stars{
+    position: absolute;
+    right: 15%;
+    top: 25%;
+}
+
+.stars .fas{
+    color: rgb(245, 245, 13);
+}
+.stars .fa{
+    color: rgb(255, 255, 255,0.6);
+}
+
+@media (max-width:1100px){
+    .stars{
+        top: 23%;
+    }
+    .heading{
+        top: 25%;
+    }
+    img{
+        width: 100%;
+    }
+}
+
+@media (max-width:900px){
+    .heading{
+        font-size: 3.5rem;
+    }
+    img{
+        width: 100%;
+        height: 25%;
+    }
+    .swiper{
+        width: 100%;
+        left: 0;
+    }
+}
+@media (max-width:768px){
+    img{
+        width: 75%;
+        left: 28%;
+    }
+    .header{
+        position: relative;
+    }
+
+
+    .header .fa-bars{
+        display: block;
+    }
+
+    ul{
+        position: absolute;
+        top: 100%;
+        left: 5%;
+        width: 90%;
+        background-color: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(5px);
+        border-radius: 5px;
+        z-index: 111;
+        border: 0.5px solid rgba(255, 255, 255, 0.2);
+        opacity: 0;
+        transition: .6s;
+    }
+    ul li{
+        display: block;
+        margin: 18px 0;
+        padding: 15px 0;
+        padding-left: 8% !important;
+        border-bottom: 0.2px solid rgba(255, 255, 255, 0.1);
+
+    }
+    
+    ul li:last-child{
+        border: none;
+    }
+    .show{
+        opacity: 1;
+    }
+}
+
+@media (max-width:500px){
+    img{
+        width: 100%;
+        left: 0%;
+    }
+    .heading{
+        font-size: 2.5rem;
+        top: 30%;
+    }
+    .wrapper{
+        padding: 0 25px;
+    }
+
+    .stars{
+        top: 27%;
+    }
+
+
+}
+
